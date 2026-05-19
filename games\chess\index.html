@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>체스 · GPT 미니게임</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body, #root { min-height: 100%; }
+    body { margin: 0; background: #0b0f14; color: #f8fafc; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .game-topbar { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 14px; background: rgba(11, 15, 20, 0.86); border-bottom: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(16px); }
+    .game-topbar a { color: #e2e8f0; text-decoration: none; font-size: 14px; font-weight: 800; }
+    .game-topbar a:hover { color: #ffffff; }
+    .game-topbar span { color: #94a3b8; font-size: 13px; font-weight: 700; }
+    @media (max-width: 560px) { .game-topbar { align-items: flex-start; flex-direction: column; } .game-topbar span { font-size: 12px; } }
+  </style>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <nav class="game-topbar" aria-label="게임 이동">
+    <a href="../../index.html">← 게임 목록</a>
+    <span>체스</span>
+  </nav>
+  <main id="root"></main>
+  <script type="text/babel" data-presets="react" src="./chess_with_move_hints.jsx"></script>
+</body>
+</html>
